@@ -2,7 +2,7 @@ import "./Header.css";
 import { FaShoppingCart } from 'react-icons/fa';
 
 
-const Header = () => {
+const Header = ({state}) => {
   return (
     <>
       <header>
@@ -17,7 +17,7 @@ const Header = () => {
             <FaShoppingCart size={30}/>
             <div className="cart-box">
               <p>
-                1
+                {state.length}
               </p>
             </div>
           </div>

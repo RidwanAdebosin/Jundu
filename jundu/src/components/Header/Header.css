@@ -3,7 +3,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    border-bottom: 30px double black;
+    border-bottom: 30px double #6F4E37;
   }
   
   .leftNav {
@@ -45,7 +45,7 @@ header {
   }
 
   .cart-box{
-    background-color: black;
+    background-color: #6F4E37;
     border-radius: 50%;
     height: 2rem;
     width: 2rem;
@@ -56,6 +56,10 @@ header {
     position: absolute;
     top: -0.9rem;
     left: 0.7rem;
+  }
+
+  .cart-box p{
+    font-weight: 700;
   }
 
   
