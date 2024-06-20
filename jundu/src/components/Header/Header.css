@@ -1,0 +1,62 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 30px double black;
+  }
+  
+  .leftNav {
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .rightNav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .rightNav a {
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .rightNav a:hover {
+    transform: scale(1.05);
+  }
+  
+  .leftNav:hover {
+    transform: rotate(360deg);
+  }
+
+  .cart  {
+    position: relative;
+    align-items: center;
+    gap: 0.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .cart:hover {
+    transform: scale(1.05);
+  }
+
+  .cart-box{
+    background-color: black;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -0.9rem;
+    left: 0.7rem;
+  }
+
+  
+  
