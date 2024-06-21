@@ -2,6 +2,7 @@
 import { useReducer } from "react";
 import Header from "./components/Header/Header";
 import Product from "./components/Products/Products";
+import Hero from "./components/Hero/Hero";
 
 const initialState = [];
 
@@ -15,6 +16,7 @@ const [state, dispatch] = useReducer(Reducer, initialState)
   return (
     <>
       <Header state={state}/>
+      <Hero/>
       <Product dispatch={dispatch}/>
     </>
   );
