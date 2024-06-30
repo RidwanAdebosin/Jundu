@@ -1,66 +1,74 @@
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    border-bottom: 30px double #6F4E37;
-  }
-  
-  .leftNav {
-    transition: transform 0.2s ease-in-out;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 5rem;
+  background-color: burlywood;
+  border-bottom: 20px double brown;
+  position: fixed;
+  width: 100%;
+
+  & .leftNav {
+    font-size: 2rem;
+    font-weight: bolder;
     cursor: pointer;
   }
-  
+
   .rightNav {
     display: flex;
+    gap: 1rem;
     align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .rightNav a {
-    display: flex;
-    gap: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .rightNav a:hover {
-    transform: scale(1.05);
-  }
-  
-  .leftNav:hover {
-    transform: rotate(360deg);
+
+    & a {
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      color: black;
+    }
+
+    & .cart {
+      cursor: pointer;
+    }
   }
 
-  .cart  {
-    position: relative;
-    align-items: center;
-    gap: 0.2rem;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+  & .hamburger{
+    display: none;
   }
 
-  .cart:hover {
-    transform: scale(1.05);
-  }
+}
 
-  .cart-box{
-    background-color: #6F4E37;
-    border-radius: 50%;
-    height: 2rem;
-    width: 2rem;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: -0.9rem;
-    left: 0.7rem;
-  }
+/* Styling the navBar for a smaller screen */
+@media (max-width : 800px) {
+  nav {
+    padding: 0.5rem 1rem;
+    
+    & .hamburger{
+        display: block;
+      }
 
-  .cart-box p{
-    font-weight: 700;
-  }
+      & .rightNav {
+        display: none;
+        position: absolute;
+        right: 0;
+        width: 100%;
+      }
 
-  
-  
+    & .rightNav.open{
+      display: grid;
+      transform: translateX(0);
+      margin-block-start: 19.6rem;
+      min-width: 100%;
+      background-color: burlywood;
+      padding:  1rem;
+
+      & a {
+        font-weight: 500;
+      }
+
+      & .cart {
+        cursor: pointer;
+      }
+    }
+  }
+}
