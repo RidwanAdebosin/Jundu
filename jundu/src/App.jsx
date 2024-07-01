@@ -1,8 +1,8 @@
 
-// import Categories from "./components/Categories/Categories";
+import Categories from "./components/Categories/Categories";
 import Header from "./components/Header/Header";
 // import Product from "./components/Products/Products";
-// import Hero from "./components/Hero/Hero";
+import Hero from "./components/Hero/Hero";
 
 
 const App = () => {
@@ -10,8 +10,8 @@ const App = () => {
   return (
     <>
       <Header/>
-      {/* <Hero/> */}
-      {/* <Categories/> */}
+      <Hero/>
+      <Categories/>
       {/* <Product/> */}
     </>
   );

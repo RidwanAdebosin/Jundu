@@ -11,9 +11,8 @@
   width: 100%;
   
   
-  
   & .logo {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   
 
@@ -26,14 +25,13 @@
 
     & .rightNav.open {
       display: grid;
+      gap: 1rem;
       transform: translateX(0);
-      margin-block-start: 19.6rem;
+      margin-block-start: 19rem;
       min-width: 100%;
       background-color: burlywood;
       padding: 1rem;
-
       background: rgba(255, 255, 255, 0.37);
-      border-radius: 16px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(16.2px);
       -webkit-backdrop-filter: blur(16.2px);
@@ -41,6 +39,8 @@
 
       & a {
         font-weight: 800;
+        color: #000;
+        text-decoration: none;
       }
       
       & .cart {
@@ -50,38 +50,34 @@
   }
   
 
-  /* @media (width >= 800px) {
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    height: 5rem;
-    background-color: #deb887;
-    border-bottom: 20px double brown;
-    position: fixed;
-    width: 100%;
+  @media (width >= 800px) {
+  .header {
+    padding-inline: 2rem;
+    height: 7rem;
+ 
   
+
     & .leftNav {
       font-size: 2rem;
       font-weight: bolder;
       cursor: pointer;
+      padding-inline: 0;
     }
   
-    .rightNav {
+    & .rightNav {
       display: flex;
-      gap: 1rem;
       align-items: center;
+      gap: 1rem;
+      position: relative;
+      left: auto;
+      width: auto; 
+    }
   
       & a {
-        cursor: pointer;
-        font-weight: 500;
         text-decoration: none;
         color: black;
-      }
-  
-      & .cart {
-        cursor: pointer;
+        font-size: larger;
+        
       }
     }
   
@@ -90,4 +86,3 @@
     }
   }
   
-  } */
