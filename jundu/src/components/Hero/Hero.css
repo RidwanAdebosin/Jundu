@@ -1,5 +1,59 @@
-img {
-    background: url('https://www.google.com/imgres?q=e%20commerce%20hero%20image&imgurl=https%3A%2F%2Fwww.qeretail.com%2Fblog%2Fwp-content%2Fuploads%2F2018%2F07%2Fhero-image.jpg&imgrefurl=https%3A%2F%2Fwww.qeretail.com%2Fblog%2Fhero-image-design-ideas-for-successful-ecommerce-websites&docid=q5bD88y46elMNM&tbnid=ZjrR39SAFaV3wM&vet=12ahUKEwiZ3uTv0u2GAxUaVUEAHfuFCUsQM3oECGIQAA..i&w=850&h=384&hcb=2&ved=2ahUKEwiZ3uTv0u2GAxUaVUEAHfuFCUsQM3oECGIQAA');
-    width: 100%;
-    height: 20vh;
+.hero {
+  display: flex;
+  padding-top: 100px;
+  width: 100%;
+  background-color: lightgoldenrodyellow;
+  height: auto;
+}
+
+.hero-section-text {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & .hero-section-h1 {
+    line-height: 1;
+    margin-block-end: 0.5rem;
+  }
+
+  & span {
+    max-width: 15rem;
+    text-wrap: balance;
+  }
+}
+
+.hero-section-image {
+  display: none;
+}
+
+@media (width >= 800px) {
+  .hero {
+    inline-size: 100%;
+    display: flex;
+    background-color: lightgoldenrodyellow;
+    height: auto;
+
+    & .hero-section-image {
+      display: block;
+    }
+
+    .hero-section-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      & .hero-section-h1 {
+        line-height: 1;
+        margin-block-end: 1.5rem;
+        max-width: 35rem;
+        text-wrap: balance;
+      }
+
+      & span {
+        max-width: 25rem;
+        text-wrap: balance;
+      }
+    }
+  }
 }

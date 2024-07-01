@@ -22,10 +22,10 @@ const Header = () => {
     return (
         <nav className="header" ref={navRef}>
             <div className="leftNav">
-                Jundu
+                <h1>Jundu</h1>
             </div>
             <div className="hamburger">
-                <Hamburger toggled={hamburgerIsOpen} toggle={setHamburgerIsOpen} aria-label="Toggle menu" />
+                <Hamburger toggled={hamburgerIsOpen} toggle={setHamburgerIsOpen} aria-label="Toggle menu" className="hamburger"/>
             </div>
             <div className={`rightNav ${hamburgerIsOpen ? 'open' : ''}`}>
                 <a href="#home">Home</a>
