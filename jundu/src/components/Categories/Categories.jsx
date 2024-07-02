@@ -1,45 +1,23 @@
+import Button from "../Button/Button"
 import "./Categories.css";
-import "../Button/Button"
-
-const Category = ({summary, items}) => {
-    return(
-        <div>
-            <details>
-                <summary>{summary}</summary>
-                <ul>
-                    {items.map((item) => (
-                        <li key={index}>{item}</li>
-                    ))}
-                </ul>
-            </details>
-        </div>
-    )
-};
 
 const Categories = () => {
-      const categoriesData = [
-          {
-            summary: 'Heading Type',
-            items: ['In-ear', 'On-ear', 'Over-ear']
-        },
-        {
-            summary: 'Brand',
-            items: ['Sony', 'Apple', 'Nokia']
-        },
-        {
-            summary: 'Price Range',
-            items: ['₦0-₦1000', '₦1000-₦5000','₦5000-₦10000']
-        },
-
-      ];
-      return (
+    return(
         <div className="categories">
-            {categoriesData.map((category, index) => {
-                <Category key={index} summary={category.summary} items={category.items}/>
-            })}
+        <div className="product-categories">
+        <Button>Headphone Type <i className="fa fa-caret-down"></i></Button>
+        <Button>Price <i className="fa fa-caret-down"></i></Button>
+        <Button>Review <i className="fa fa-caret-down"></i></Button>
+        <Button>Color <i className="fa fa-caret-down"></i></Button>
+        <Button>Material <i className="fa fa-caret-down"></i></Button>
+        <Button>Offer <i className="fa fa-caret-down"></i></Button>
+        <Button>All Filters <i className="fa fa-caret-down"></i></Button>
         </div>
-      )
-    
+        <div className="sort">
+            <Button>Sort by <i className="fa fa-caret-down"></i></Button>
+        </div>
+        </div>
+    )
 };
 
 export default Categories;

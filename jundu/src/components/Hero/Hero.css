@@ -2,8 +2,9 @@
   display: flex;
   padding-top: 100px;
   width: 100%;
-  background-color: lightgoldenrodyellow;
+  background-color: #F8EDE6;
   height: auto;
+  margin-block-end:2rem;
 }
 
 .hero-section-text {
@@ -61,5 +62,5 @@
 .carousel-image{
     width: 800px;
     object-fit: cover;
-    /* height: 600px; */
+   
 }

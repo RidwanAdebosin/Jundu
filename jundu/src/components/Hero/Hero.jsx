@@ -24,7 +24,8 @@ const Hero = () => {
     const images = [
         "https://media.istockphoto.com/id/891600988/photo/shopping-together-for-all-their-essentials.jpg?s=612x612&w=0&k=20&c=LpNZcFdnN6sv8w-hJgiwd3NXuGWB-NiRQADHcDV3SBs=",
         "https://images.westend61.de/0000859382pw/woman-playing-with-shopping-cart-in-grocery-store-CAIF15602.jpg",
-        "https://blogs.kent.ac.uk/staff-student-news/files/2022/12/Kent-23rd-june-9414.jpg"
+        "https://blogs.kent.ac.uk/staff-student-news/files/2022/12/Kent-23rd-june-9414.jpg",
+        "https://images.westend61.de/0001226125pw/mixed-race-woman-buying-produce-in-supermarket-BLEF13662.jpg"
     
     ]
     
