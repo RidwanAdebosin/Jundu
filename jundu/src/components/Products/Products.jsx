@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./Products.css";
 
 import Button from "../Button/Button";
-import Heart from "../../Utils/Heart";
+import Heart from "../../Utils/Heart/Heart";
 import StarRating from "../../Utils/StarRating";
 
 

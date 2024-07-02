@@ -1,0 +1,14 @@
+.heart-container {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .heart-container:hover {
+    background-color: lightgray;
+  }
+  
+  .heart-container.liked {
+    background-color: rgb(243, 79, 79); 
+  }
+  
