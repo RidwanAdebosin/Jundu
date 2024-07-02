@@ -40,8 +40,8 @@
     margin-block-end: 2rem;
 
     & .sort {
-        position: sticky;
-        top: 60px;
+        /* position: sticky; */
+        /* top: 60px; */
     }
     
     & .sort Button{

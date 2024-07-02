@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import "./Products.css";
 
 import Button from "../Button/Button";
-import Heart from "../../Utils/Heart/Heart";
+import Heart from "../../Utils/Heart";
 import StarRating from "../../Utils/StarRating";
+import Pagination from "../../Utils/Pagination";
 
 
 
@@ -11,6 +12,8 @@ const url = "https://fakestoreapi.com/products";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
+  const [productsPerPage] = useState(10);
+  const [page, setPage] = useState(1);
 
   const handleAddToCart = (product) => {
     
@@ -27,13 +30,19 @@ const Product = () => {
       .then((json) => setProducts(json));
   }, []);
 
+  const indexOfLastProduct = page * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+
   return (
+    <div>
     <main className="card-container">
-      {products.map((item, index) => (
+      {currentProducts.map((item, index) => (
         <div className="single-card" key={index}>
           <div className="img-wrapper">
+          <img src={item.image} alt={item.title}
+          />
           <Heart/>
-          <img src={item.image} alt={item.title}/>
           </div>
           <div className="product-content">
           <p>{truncate(item.title, 20)}</p>
@@ -42,8 +51,13 @@ const Product = () => {
           </div>
           <Button onClick={() => handleAddToCart(item)}>Add to Cart</Button>
         </div>
+       
       ))}
     </main>
+      <Pagination page={page} setPage={setPage} totalProducts={products.length} productsPerPage={productsPerPage}/>
+
+    </div>
+    
   );
 };
 
