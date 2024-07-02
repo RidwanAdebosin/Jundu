@@ -36,11 +36,19 @@
 .categories {
     display: grid;
     gap: 1rem;
+    padding-inline: 1.5rem;
+    margin-block-end: 2rem;
 
+    & .sort {
+        position: sticky;
+        top: 60px;
+    }
+    
     & .sort Button{
         background-color: transparent;
         border: 3px solid #E8E8E8;
         animation: floatin 2.5s ease-out;
+      
     }
     & i {
         padding-inline-start: 0.5rem;
@@ -56,4 +64,13 @@
         transform: translateX(0);
         opacity: 1;
     }
+}
+
+@media (width >= 800px) {
+    .categories {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
 }

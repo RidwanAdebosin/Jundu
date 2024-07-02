@@ -8,28 +8,32 @@
   .card-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 5rem 2rem;
+    justify-content: center;
     gap: 1rem;
   }
   
-  .card {
+  .single-card {
     display: grid;
     place-items: center;
     cursor: pointer;
     gap: 0.5rem;
   }
   
-  .card img {
-    width: 200px;
-    height: 300px;
+  .img-wrapper{
+    border: 2px solid red;
+
+  }
+  
+  .single-card img {
+    /* background-color: #F5F5F2; */
+    padding: 20px;
+    width: 100px;
+    height: 100px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 5px;
     transition: transform 0.2s;
   }
-  
-  .card img:hover {
-    transform: scale(1.05);
-  }
+ 
   
   .product-content {
     justify-content: center;
