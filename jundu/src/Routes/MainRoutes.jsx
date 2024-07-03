@@ -1,7 +1,22 @@
-import {createBrowserRouter} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import App from './App';
+import Post from './Post'; 
 
-
-export const MainRoutes = createBrowserRouter([
-
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      {
+        path: 'post',
+        element: <Post />,
+      },
+    ],
+  },
 ]);
 
+function Root() {
+  return <RouterProvider router={router} />;
+}
+
+export default Root;

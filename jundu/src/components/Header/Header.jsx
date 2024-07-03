@@ -2,6 +2,8 @@ import "./Header.css";
 import { FaShoppingCart } from 'react-icons/fa';
 import Hamburger from "hamburger-react";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const Header = () => {
     const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
@@ -27,11 +29,12 @@ const Header = () => {
             <div className="hamburger">
                 <Hamburger toggled={hamburgerIsOpen} toggle={setHamburgerIsOpen} aria-label="Toggle menu" className="hamburger"/>
             </div>
+           
             <div className={`rightNav ${hamburgerIsOpen ? 'open' : ''}`}>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="#register">Register</a>
+                <Link to="/">Home</Link>
+                <Link to="post">Post</Link>
+                <Link to="contact">Contact</Link>
+                <Link to="register">Register</Link>
                 <div className="cart">
                     <FaShoppingCart size={30} aria-label="Shopping Cart" />
                 </div>
