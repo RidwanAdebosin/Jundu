@@ -24,7 +24,7 @@ const Header = () => {
     return (
         <nav className="header" ref={navRef}>
             <div className="leftNav">
-                <h1>Jundu</h1>
+                <h1>ShopLit</h1>
             </div>
             <div className="hamburger">
                 <Hamburger toggled={hamburgerIsOpen} toggle={setHamburgerIsOpen} aria-label="Toggle menu" className="hamburger"/>
@@ -32,9 +32,9 @@ const Header = () => {
            
             <div className={`rightNav ${hamburgerIsOpen ? 'open' : ''}`}>
                 <Link to="/">Home</Link>
-                <Link to="post">Post</Link>
-                <Link to="contact">Contact</Link>
-                <Link to="register">Register</Link>
+                <Link to="/post">Post</Link>
+                <Link to="/contact">Contact</Link>
+                <Link to="/register">Register</Link>
                 <div className="cart">
                     <FaShoppingCart size={30} aria-label="Shopping Cart" />
                 </div>

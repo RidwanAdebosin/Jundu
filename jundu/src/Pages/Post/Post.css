@@ -1,0 +1,26 @@
+.section {
+    padding-top: 100px;
+    display: grid;
+    place-items: center;
+}
+
+.post-section form {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+}
+
+.post-section form input {
+    margin-inline-start: 1rem;
+}
+
+.post-section form .image-holder {
+    background: url('https://www.trschools.com/templates/imgs/default_placeholder.png') center center no-repeat;
+    background-size: cover;
+    height: 15rem;
+    width: 15rem;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+}
+
+
