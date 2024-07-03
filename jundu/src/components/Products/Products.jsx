@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Products.css";
 
-import Button from "../Button/Button";
+import Button from "../../Utils/Button/Button";
 import Heart from "../../Utils/Heart";
 import StarRating from "../../Utils/StarRating";
 import Pagination from "../../Utils/Pagination/Pagination";

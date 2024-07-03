@@ -1,26 +1,52 @@
-.section {
+.post-product-section {
     padding-top: 100px;
     display: grid;
     place-items: center;
+
+    & label {
+        padding: 0.5rem;
+        cursor: pointer;
+        border: none;
+        border-radius: 20px;
+        transition: transform 0.2s;
+        background: #ECECE9;
+    }
+
+    & input {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+        font-size: 1rem; 
+        line-height: 1.5; 
+        transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus effect */
+    }
+    
+    & input:focus {
+        border-color: #007BFF; 
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); 
+        outline: none; 
+    }
+    
 }
 
 .post-section form {
     display: grid;
     place-items: center;
     gap: 1rem;
+    margin-block-end: 2rem;
 }
 
 .post-section form input {
     margin-inline-start: 1rem;
 }
 
-.post-section form .image-holder {
-    background: url('https://www.trschools.com/templates/imgs/default_placeholder.png') center center no-repeat;
+.post-section form .post-img {
     background-size: cover;
     height: 15rem;
     width: 15rem;
     border: 1px solid #ccc;
     margin-top: 1rem;
 }
+
 
 

@@ -2,7 +2,7 @@ import "./Header.css";
 import { FaShoppingCart } from 'react-icons/fa';
 import Hamburger from "hamburger-react";
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 const Header = () => {
@@ -31,12 +31,15 @@ const Header = () => {
             </div>
            
             <div className={`rightNav ${hamburgerIsOpen ? 'open' : ''}`}>
-                <Link to="/">Home</Link>
-                <Link to="/post">Post</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/register">Register</Link>
-                <div className="cart">
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/post">Post</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
+                <NavLink to="/register">Register</NavLink>
+                <div className="cart" >
+                    <NavLink to="/cart">
                     <FaShoppingCart size={30} aria-label="Shopping Cart" />
+
+                    </NavLink>
                 </div>
             </div>
         </nav>

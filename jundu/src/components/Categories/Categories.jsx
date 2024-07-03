@@ -1,4 +1,5 @@
-import Button from "../Button/Button"
+
+import Button from "../../Utils/Button/Button";
 import "./Categories.css";
 
 const Categories = () => {
