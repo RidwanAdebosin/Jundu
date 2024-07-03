@@ -1,5 +1,5 @@
-import Button from "../components/Button/Button";
-
+import Button from "../../components/Button/Button";
+import "./Pagination.css";
 
 const Pagination = ({page, setPage, totalProducts, productsPerPage, disabledNext}) => {
     const totalPages = Math.ceil(totalProducts / productsPerPage);
@@ -15,11 +15,11 @@ const Pagination = ({page, setPage, totalProducts, productsPerPage, disabledNext
     }
 
     return (
-        <>
+        <div className="pagination-btn">
         <Button onClick={handlePrevPage} disabled={page === 1}>Prev</Button>
         <span>{page}</span>
         <Button onClick={handleNextPage} disabled={page === totalPages}>Next</Button>
-        </>
+        </div>
     )
 };
 

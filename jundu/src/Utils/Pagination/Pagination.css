@@ -1,0 +1,21 @@
+.pagination-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 2rem;
+  
+
+    & button {
+        background-color: burlywood;
+        padding: 0.5rem 1rem;
+    }
+
+    & button:hover {
+        font-weight: 700;
+    }
+    & button:focus {
+        outline: 1px solid brown;
+        outline-offset: 2px;
+    }
+}

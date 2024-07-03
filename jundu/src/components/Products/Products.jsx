@@ -4,7 +4,7 @@ import "./Products.css";
 import Button from "../Button/Button";
 import Heart from "../../Utils/Heart";
 import StarRating from "../../Utils/StarRating";
-import Pagination from "../../Utils/Pagination";
+import Pagination from "../../Utils/Pagination/Pagination";
 
 
 
