@@ -35,6 +35,7 @@ const Post = () => {
   const addProduct = () => {
     console.log(products);
     dispatch({ type: "addProduct", payload: inputValues });
+    products("");
   };
 
   return (

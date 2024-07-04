@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import "./Products.css";
-
 import Button from "../../Utils/Button/Button";
 import Heart from "../../Utils/Heart";
 import StarRating from "../../Utils/StarRating";
 import Pagination from "../../Utils/Pagination/Pagination";
+import Spinner from "../../Utils/Spinner/Spinner";
 
 
 
@@ -14,6 +14,13 @@ const Product = () => {
   const [products, setProducts] = useState([]);
   const [productsPerPage] = useState(10);
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(true);
+
+
+  // setting a timeout for the spinner
+  setTimeout(() => {
+    setLoading(false)
+  }, 2000)
 
   const handleAddToCart = (product) => {
     
@@ -35,9 +42,14 @@ const Product = () => {
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
   return (
-    <div>
+    <>
     <main className="card-container">
-      {currentProducts.map((item, index) => (
+      {loading ? (
+        <Spinner/>
+      ) :
+      
+      
+     ( currentProducts.map((item, index) => (
         <div className="single-card" key={index}>
           <div className="img-wrapper">
           <img src={item.image} alt={item.title}
@@ -51,12 +63,12 @@ const Product = () => {
           </div>
           <Button onClick={() => handleAddToCart(item)}>Add to Cart</Button>
         </div>
-       
-      ))}
+     )
+    ))}
     </main>
-      <Pagination page={page} setPage={setPage} totalProducts={products.length} productsPerPage={productsPerPage}/>
+    <Pagination page={page} setPage={setPage} totalProducts={products.length} productsPerPage={productsPerPage}/>
 
-    </div>
+    </>
     
   );
 };
