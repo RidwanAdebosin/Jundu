@@ -6,7 +6,7 @@ const SingleProductDetails = (products) => {
 
 
 return (
-    
+    <h1>hello</h1>
 )
 };
 

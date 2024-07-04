@@ -19,7 +19,11 @@ const Header = () => {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         }
-    },[navRef])
+    },[navRef]);
+
+    const handleNavLinkClick = () => {
+        setHamburgerIsOpen(false);
+    };
     
     return (
         <nav className="header" ref={navRef}>
@@ -31,11 +35,11 @@ const Header = () => {
             </div>
            
             <div className={`rightNav ${hamburgerIsOpen ? 'open' : ''}`}>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/post">Post</NavLink>
-                <NavLink to="/contact">Contact</NavLink>
-                <NavLink to="/register">Register</NavLink>
-                <div className="cart" >
+                <NavLink to="/" onClick={handleNavLinkClick}>Home</NavLink>
+                <NavLink to="/post" onClick={handleNavLinkClick}>Post</NavLink>
+                <NavLink to="/contact" onClick={handleNavLinkClick}>Contact</NavLink>
+                <NavLink to="/register" onClick={handleNavLinkClick}>Register</NavLink>
+                <div className="cart" onClick={handleNavLinkClick}>
                     <NavLink to="/cart">
                     <FaShoppingCart size={30} aria-label="Shopping Cart" />
 

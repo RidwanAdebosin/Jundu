@@ -1,29 +1,50 @@
 import "./Post.css";
 import Button from "../../Utils/Button/Button";
-import { useReducer, useState } from "react";
+import { useProducts } from "../../Utils/ProductsContext";
+import { useState } from "react";
 
-const initialState = [] || JSON.parse(localStorage.getItem("products"));
 const placeholder ="https://www.trschools.com/templates/imgs/default_placeholder.png"
+const url = "https://fakestoreapi.com/products";
 
+// const reducer = (state, action) => {
+//   if (action.type === "addProduct") {
+//     localStorage.setItem(
+//       "products",
+//       JSON.stringify([...state, { ...action.payload }])
+//     );
+//     return [...state, { ...action.payload }];
+//   } else {
+//     throw new Error();
+//   }
+// };
 
-const reducer = (state, action) => {
-  if (action.type === "addProduct") {
-    localStorage.setItem(
-      "products",
-      JSON.stringify([...state, { ...action.payload }])
-    );
-    return [...state, { ...action.payload }];
-  } else {
-    throw new Error();
+const addProductToAPI = async(product) => {
+  try {
+    const response = await fetch(url, {
+      method: "POST", 
+      headers: {
+        'Content-Type' : "application/json",
+      },
+      body: JSON.stringify(product),
+    });
+    if(!response.ok) {
+      throw new Error('Something went wrong while adding the product');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
   }
+
 };
 
 const Post = () => {
-  const [products, dispatch] = useReducer(reducer, initialState);
+  const {dispatch} = useProducts();
   const [inputValues, setInputValues] = useState({});
   const [displayImage, setDisplayImage] = useState(placeholder);
 
-  const HandleUploadImage = (e) => {
+  const handleUploadImage = (e) => {
     const file = e.target.files[0];
     const save = URL.createObjectURL(file);
     setInputValues((prev) => {
@@ -32,10 +53,17 @@ const Post = () => {
     setDisplayImage(save);
   };
 
-  const addProduct = () => {
-    console.log(products);
-    dispatch({ type: "addProduct", payload: inputValues });
-    products("");
+  const addProduct = async () => {
+    try {
+      const newProduct = await addProductToAPI(inputValues);
+      dispatch({ type: "addProducts", payload: newProduct });
+      console.log(newProduct);
+      setInputValues({});
+      setDisplayImage(placeholder);
+    } catch(error){
+      console.error('Failed to add product:', error);
+    }
+    // initialState("")
   };
 
   return (
@@ -50,7 +78,7 @@ const Post = () => {
             type="file"
             accept="image/jpeg, image/gif,image/x-png"
             id="image"
-            onClick={HandleUploadImage}
+            onClick={handleUploadImage}
           />
           <label htmlFor="image">Add Image</label>
           
