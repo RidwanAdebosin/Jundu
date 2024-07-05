@@ -1,11 +1,12 @@
-const ProductsList = [
+export const ProductsList = [
   {
     "id": 1,
     "name": "Product 1",
     "description": "Description for product 1",
     "category": "Electronics",
     "price": "100.00",
-    "image": "https://images.unsplash.com/photo-1580910051073-9c5825c1a2d6"
+    "image": "https://images.unsplash.com/photo-1580910051073-9c5825c1a2d6",
+    "inCart": true
   },
   {
     "id": 2,
