@@ -1,6 +1,6 @@
 
 import spinner from "../../assets/spinner.svg";
-// import "./Spinner.css"
+import "./Spinner.css"
 
 function Spinner(){
 return (

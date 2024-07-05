@@ -33,7 +33,6 @@ const Header = () => {
             <div className="hamburger">
                 <Hamburger toggled={hamburgerIsOpen} toggle={setHamburgerIsOpen} aria-label="Toggle menu" className="hamburger"/>
             </div>
-           
             <div className={`rightNav ${hamburgerIsOpen ? 'open' : ''}`}>
                 <NavLink to="/" onClick={handleNavLinkClick}>Home</NavLink>
                 <NavLink to="/post" onClick={handleNavLinkClick}>Post</NavLink>
@@ -42,7 +41,6 @@ const Header = () => {
                 <div className="cart" onClick={handleNavLinkClick}>
                     <NavLink to="/cart">
                     <FaShoppingCart size={30} aria-label="Shopping Cart" />
-
                     </NavLink>
                 </div>
             </div>
