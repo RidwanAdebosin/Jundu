@@ -7,7 +7,7 @@
   
 
     & button {
-        background-color: burlywood;
+        background-color: #fbf2c0;
         padding: 0.5rem 1rem;
     }
 
@@ -19,3 +19,13 @@
         outline-offset: 2px;
     }
 }
+
+/* colors */
+/* --white: #ffffff;
+--green: #333d29;
+--coffee: #43281c;
+--vanilla: #f1e3d3;
+--lemon: #fbf2c0;
+--mocha: #7f4f24;
+--tan: #ddb892;
+--blue: #3e80b6; */

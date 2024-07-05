@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { useProducts } from "../../Utils/ProductsContext";
+import { useState, useEffect, useContext } from "react";
 import "./Products.css";
 import Button from "../../Utils/Button/Button";
 import Heart from "../../Utils/Heart";
@@ -7,6 +6,7 @@ import StarRating from "../../Utils/StarRating";
 import Pagination from "../../Utils/Pagination/Pagination";
 import Spinner from "../../Utils/Spinner/Spinner";
 import { ProductsList } from "../../Utils/ProductsList";
+import { ProductContext } from "../../Utils/ProductsContext";
 
 // const url = "https://fakestoreapi.com/products";
 // const ProductsList = [
@@ -93,21 +93,11 @@ import { ProductsList } from "../../Utils/ProductsList";
 // ]
 
 const Product = () => {
-  const {products, dispatch} = useProducts();
+  // dispatch({type: "addProduct", payload: inputValues})
+  const {products} = useContext(ProductContext);
   const [productsPerPage] = useState(10);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
-
-  //fetching the products API
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     const res = await fetch(url);
-  //     const json = await res.json();
-  //     dispatch({ type: "setProducts", payload: json });
-  //     setLoading(false);
-  //   };
-  //   fetchProducts();
-  // }, [dispatch]);
 
   // setting a timeout for the spinner
   useEffect(()=> {
@@ -116,18 +106,18 @@ const Product = () => {
     }, 2000);
   },[]);
 
-  const handleAddToCart = (product) => {
-    dispatch({type: "addToCart", payload: product});
-    console.log(product)
+  const handleAddToCart = (products) => {
+    dispatch({type: "addToCart", payload: products});
+    console.log(products)
   };
 
-  // const truncate = (str, length) => {
-  //   return str.length > length ? str.substring(0, length) + "..." : str;
-  // };
+  const truncate = (str, length) => {
+    return str.length > length ? str.substring(0, length) + "..." : str;
+  };
 
   const indexOfLastProduct = page * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = ProductsList.slice(
+  const currentProducts = products.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
@@ -145,7 +135,8 @@ const Product = () => {
                 <Heart />
               </div>
               <div className="product-content">
-                <p>{item.title}</p>
+                <p>{item.name}</p>
+                <p>{truncate(item.description, 20)}</p>
                 <StarRating />
                 <p>₦{item.price}</p>
               </div>

@@ -4,12 +4,11 @@ import Header from "./components/Header/Header";
 import Post from "./Pages/Post/Post";
 import Home from './Pages/Post/Home';
 import CartItems from './Pages/Cart/Cart';
-import { ProductProvider } from './Utils/ProductsContext';
 
 
 const App = () => {
   return (
-    <ProductProvider>
+    
     <BrowserRouter>
       <Header />
       <Routes>
@@ -19,7 +18,7 @@ const App = () => {
       </Routes>
     </BrowserRouter>
 
-    </ProductProvider>
+   
   );
 };
 

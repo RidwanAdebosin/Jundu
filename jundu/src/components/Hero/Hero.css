@@ -2,10 +2,11 @@
   display: flex;
   padding-top: 100px;
   width: 100%;
-  background-color: #F8EDE6;
+  background-color: #f1e3d3;
   height: auto;
   margin-block-end:2rem;
 }
+
 
 .hero-section-text {
   padding: 1.5rem 1rem;

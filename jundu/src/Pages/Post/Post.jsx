@@ -1,22 +1,24 @@
 import "./Post.css";
 import Button from "../../Utils/Button/Button";
-import { useProducts } from "../../Utils/ProductsContext";
-import { useState } from "react";
+import { ProductContext } from "../../Utils/ProductsContext";
+import { useState,useContext } from "react";
+
 
 const placeholder = "https://www.trschools.com/templates/imgs/default_placeholder.png";
 
-const reducer = (state, action) => {
-  if (action.type === "addProduct") {
-    const updatedState = [...state, { ...action.payload }];
-    localStorage.setItem("products", JSON.stringify(updatedState));
-    return updatedState;
-  } else {
-    throw new Error("Unknown action type");
-  }
-};
+// const reducer = (state, action) => {
+//   if (action.type === "addProduct") {
+//     const updatedState = [...state, { ...action.payload }];
+//     localStorage.setItem("products", JSON.stringify(updatedState));
+//     return updatedState;
+//   } else {
+//     throw new Error("Unknown action type");
+//   }
+// };
+
 
 const Post = () => {
-  const { dispatch } = useProducts(reducer);
+  const { dispatch } = useContext(ProductContext);
   const [inputValues, setInputValues] = useState({});
   const [displayImage, setDisplayImage] = useState(placeholder);
 
@@ -30,17 +32,22 @@ const Post = () => {
     setDisplayImage(save);
   };
 
+  // const addProduct = () => {
+  //   try {
+  //     const newProduct = inputValues;
+  //     dispatch({ type: "addProduct", payload: newProduct });
+  //     console.log("Product added:", newProduct);
+  //     setInputValues({});
+  //     setDisplayImage(placeholder);
+  //   } catch (error) { 
+  //     console.error('Failed to add product:', error);
+  //   }
+  // };
   const addProduct = () => {
-    try {
-      const newProduct = inputValues;
-      dispatch({ type: "addProduct", payload: newProduct });
-      console.log("Product added:", newProduct);
-      setInputValues({});
-      setDisplayImage(placeholder);
-    } catch (error) {
-      console.error('Failed to add product:', error);
-    }
-  };
+    dispatch({type: "addProduct", payload:inputValues});
+    setInputValues({});
+    setDisplayImage(placeholder);
+  }
 
   return (
     <section className="post-product-section">
@@ -52,7 +59,7 @@ const Post = () => {
             type="file"
             accept="image/jpeg, image/gif, image/png"
             id="image"
-            onChange={handleUploadImage}
+            onChange={(e) => handleUploadImage(e)}
           />
           <label htmlFor="image">Add Image</label>
 

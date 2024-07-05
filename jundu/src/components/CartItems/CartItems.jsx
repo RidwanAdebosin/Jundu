@@ -1,11 +1,11 @@
 import "./CartItems.css";
 import Button from "../../Utils/Button/Button";
-import { useState } from "react";
-import { useProducts } from "../../Utils/ProductsContext";
+import { useContext, useState } from "react";
+import { ProductContext } from "../../Utils/ProductsContext";
 
-const CartItems = ({ product }) => {
+const CartItems = ({ products }) => {
   const [quantity, setQuantity] = useState(1);
-  const { dispatch } = useProducts();
+  const { dispatch } = useContext(ProductContext);
 
   const handleIncreaseQuantity = () => {
     setQuantity((prev) => prev + 1);
@@ -22,19 +22,19 @@ const CartItems = ({ product }) => {
   };
 
   const handleDeleteCartItem = () => {
-    dispatch({ type: "removeProduct", payload: product.id });
+    dispatch({ type: "removeProduct", payload: products.id });
   };
 
   return (
     <div className="CartItemContainer">
       <div className="CartItemImage">
-        <img src={product.image} alt={product.name} />
+        <img src={products.image} alt={products.name} />
       </div>
       <div className="CartDetails">
-        <h3>{product.name}</h3>
-        <p>{product.description}</p>
+        <h3>{products.name}</h3>
+        <p>{products.description}</p>
         <div className="CartItemsInfo">
-          <p>₦{product.price}</p>
+          <p>₦{products.price}</p>
           <Button className="CartItemDelete" onClick={handleDeleteCartItem}>
             Delete
           </Button>

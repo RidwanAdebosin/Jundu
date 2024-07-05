@@ -1,9 +1,10 @@
 import CartItems from "../../components/CartItems/CartItems";
 import "./Cart.css";
-import { useProducts } from "../../Utils/ProductsContext";
+import { ProductContext } from "../../Utils/ProductsContext";
+import { useContext } from "react";
 
 const Cart = () => {
-  const { products, dispatch } = useProducts();
+  const { products,dispatch } = useContext(ProductContext);
 
   const cartItems = products.filter((product) => product.inCart);
 
@@ -29,7 +30,7 @@ const Cart = () => {
       </div>
       <div className="CartHolder">
         {cartItems.map((item) => (
-          <CartItems key={item.id} product={item} />
+          <CartItems key={item.id} products={item} />
         ))}
       </div>
     </div>
