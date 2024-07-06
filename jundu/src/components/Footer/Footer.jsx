@@ -5,6 +5,8 @@ import "./Footer.css";
 
 function Footer() {
     return (
+        <>
+        
       <footer className="footer">
 
         <div className="footer-extras">
@@ -42,8 +44,11 @@ function Footer() {
             
           </div>
         </div>
+          <div className="animation-text">
         <p className="slide-paragraph">All your building materials in one site for easy quality purchase</p>
+          </div>
       </footer>
+        </>
     );
   }
   

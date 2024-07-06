@@ -4,7 +4,7 @@ import "./Categories.css";
 
 const Categories = () => {
     return(
-        <div className="categories">
+        <section className="categories">
         <div className="product-categories">
         <Button>Headphone Type <i className="fa fa-caret-down"></i></Button>
         <Button>Price <i className="fa fa-caret-down"></i></Button>
@@ -17,7 +17,7 @@ const Categories = () => {
         <div className="sort">
             <Button>Sort by <i className="fa fa-caret-down"></i></Button>
         </div>
-        </div>
+        </section>
     )
 };
 
