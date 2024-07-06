@@ -36,8 +36,9 @@
     background-color: lightgoldenrodyellow;
     height: auto;
 
-    & .hero-section-image {
+    & .hero-section-image{
       display: block;
+      max-height: 500px;
     }
 
     .hero-section-text {

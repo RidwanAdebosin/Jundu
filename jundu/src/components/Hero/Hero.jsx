@@ -22,19 +22,19 @@ const Carousel= ({images}) => {
 
 const Hero = () => {
     const images = [
-        "https://media.istockphoto.com/id/891600988/photo/shopping-together-for-all-their-essentials.jpg?s=612x612&w=0&k=20&c=LpNZcFdnN6sv8w-hJgiwd3NXuGWB-NiRQADHcDV3SBs=",
-        "https://images.westend61.de/0000859382pw/woman-playing-with-shopping-cart-in-grocery-store-CAIF15602.jpg",
-        "https://blogs.kent.ac.uk/staff-student-news/files/2022/12/Kent-23rd-june-9414.jpg",
-        "https://images.westend61.de/0001226125pw/mixed-race-woman-buying-produce-in-supermarket-BLEF13662.jpg"
+        "https://100pillars.in/wp-content/uploads/2023/04/Building-materials-industry-%E2%80%93-Retrospect-2020-min-600x375.jpg",
+        "https://www.nairaland.com/attachments/15661609_2348139462767status79f0856ad7b44c78a44ea46f149c157c_jpegb5cf7d7fd3334f6d698f7fe62ae292b3",
+        "https://i.pinimg.com/736x/32/67/be/3267becdceb3beafd1ac856f37d67451.jpg",
+        // "https://images.westend61.de/0001226125pw/mixed-race-woman-buying-produce-in-supermarket-BLEF13662.jpg"
     
     ]
     
     return (
         <main className="hero">
         <div className="hero-section-text">
-            <h1 className="hero-section-h1">Every purchase will be made with pleasure.
+            <h1 className="hero-section-h1">Every purchase of building materials will be made with pleasure and ease.
             </h1>
-            <span>We work with global brands and have created an application for you to do your shopping.</span>
+            <span>We collaborate with global brands to provide a platform where you can easily shop for building materials.</span>
         </div>
             <div className="hero-section-image">
                 <Carousel images={images}/>
