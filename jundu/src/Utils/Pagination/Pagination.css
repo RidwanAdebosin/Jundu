@@ -15,7 +15,7 @@
         font-weight: 700;
     }
     & button:focus {
-        outline: 1px solid brown;
+        outline: 2px solid brown;
         outline-offset: 2px;
     }
 }

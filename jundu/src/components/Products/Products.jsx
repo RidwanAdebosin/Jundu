@@ -132,7 +132,7 @@ const Product = () => {
             <div className="single-card" key={index}>
               <div className="img-wrapper">
                 <img src={item.image} alt={item.title} />
-                <Heart />
+                <Heart className="heart"/>
               </div>
               <div className="product-content">
                 <p>{item.name}</p>
@@ -145,12 +145,17 @@ const Product = () => {
           ))
         )}
       </main>
-      <Pagination
-        page={page}
-        setPage={setPage}
-        totalProducts={products.length}
-        productsPerPage={productsPerPage}
-      />
+      {
+        products.length === 0 ? " " : (
+          <Pagination
+            page={page}
+            setPage={setPage}
+            totalProducts={products.length}
+            productsPerPage={productsPerPage}
+          />
+
+        )
+      }
     </>
   );
 };

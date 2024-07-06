@@ -28,7 +28,9 @@ const Header = () => {
     return (
         <nav className="header" ref={navRef}>
             <div className="leftNav">
+                <NavLink to="/" className="logo-h1">
                 <h1>ShopLit</h1>
+                </NavLink>
             </div>
             <div className="hamburger">
                 <Hamburger toggled={hamburgerIsOpen} toggle={setHamburgerIsOpen} aria-label="Toggle menu" className="hamburger"/>

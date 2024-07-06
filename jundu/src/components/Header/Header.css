@@ -48,7 +48,12 @@
         cursor: pointer;
       }
     }
+
   }
+  .leftNav .logo-h1{
+   text-decoration: none;
+   color: #000;
+ }
   
 
   @media (width >= 800px) {

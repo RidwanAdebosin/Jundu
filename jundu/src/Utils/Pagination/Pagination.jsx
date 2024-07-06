@@ -1,7 +1,7 @@
 import Button from "../Button/Button";
 import "./Pagination.css";
 
-const Pagination = ({page, setPage, totalProducts, productsPerPage, disabledNext}) => {
+const Pagination = ({page, setPage, totalProducts, productsPerPage}) => {
     const totalPages = Math.ceil(totalProducts / productsPerPage);
 
     

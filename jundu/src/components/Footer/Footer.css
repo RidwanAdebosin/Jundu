@@ -1,0 +1,95 @@
+.footer{
+        padding: 2rem;
+        background-color: brown;
+        height: auto;
+        color: tan;
+
+    & .footer-extras {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-block-end: 1rem;
+    
+    & ul {
+        display: grid;
+        gap: .2rem;
+    }
+
+    & li {
+        list-style: none;
+        cursor: pointer;
+    }
+
+    & li:first-child{
+        text-decoration: underline;
+        font-weight: 600;
+    }
+  }
+
+  & .socials{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+}
+
+.slide-paragraph {
+    animation: slide 20s ease-out infinite alternate;
+    
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+@keyframes slide {
+      0% {
+        transform: translateX(-100vw);
+    }
+     100% {
+        transform: translateX(100vw);
+    }
+    
+}
+
+/* .wave{
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    width: 100%;
+    background: url("https://media.istockphoto.com/id/1461788521/vector/smooth-wave-pattern-transparent-water-wave-background.jpg?s=612x612&w=0&k=20&c=gc75INA48IK0Wt2HT9Hy2rbYMnh1l9BlEmFdEELv7yI=");
+    background-size: 250rem 30rem;
+    animation: animate15s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+        background-position-x: -250rem;
+    }
+}
+
+.wave:nth-child(1){
+    opacity: 0.9;
+}
+
+.wave:nth-child(2){
+    opacity: 0.5;
+    animation-delay: 0.2s;
+    animation-direction: reverse;
+}
+
+.wave:nth-child(3){
+    opacity: 0.7;
+    animation-delay: 5s;
+} */
+
+@media (width >= 800px){
+    .footer .footer-extras{
+            display: flex;
+            gap: 5rem;
+            justify-content: flex-start;
+        
+    }
+
+}
