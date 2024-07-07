@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     gap: 10px;
     animation: floatin 2.5s ease-out;
+    
    
 
     & i {
@@ -18,6 +19,8 @@
     gap: 1rem;
     padding-inline: 1.5rem;
     margin-block-end: 2rem;
+    /* border: 3px solid red; */
+    /* height: 300px; */
 
     & .sort {
         position: sticky;

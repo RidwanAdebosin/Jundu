@@ -4,8 +4,8 @@
         height: auto;
         color: tan;
         max-width: 100%;
-        /* position: absolute; */
-        /* bottom: 0; */
+        position: relative;
+        bottom: 0;
         /* height: 170px; */
 
     & .footer-extras {

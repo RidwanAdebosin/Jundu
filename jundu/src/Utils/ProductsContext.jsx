@@ -10,6 +10,8 @@ const reducer = (state, action) => {
     } else {
         throw new Error()
     }
+   
+    // if(action.type)
 //   switch (action.type) {
 //     case "setProducts":
 //       return action.payload || [];
