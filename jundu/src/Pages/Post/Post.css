@@ -10,6 +10,9 @@
         border: none;
         border-radius: 20px;
         transition: transform 0.2s;
+    }
+    
+    & .add-image{
         background: #ECECE9;
     }
 

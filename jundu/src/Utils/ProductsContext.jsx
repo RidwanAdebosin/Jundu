@@ -8,7 +8,12 @@ const reducer = (state, action) => {
     if(action.type === "addProduct"){
         return [...state, {...action.payload,id: state.length}];
     } else {
+      if(action.type === "addToCart"){
+        return [...state, {...action.payload,id: state.length}]
+      } else{
         throw new Error()
+
+      }
     }
    
     // if(action.type)

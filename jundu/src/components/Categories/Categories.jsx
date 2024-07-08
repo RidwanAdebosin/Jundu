@@ -6,12 +6,12 @@ const Categories = () => {
     return(
         <section className="categories">
         <div className="product-categories">
-        <Button>Headphone Type <i className="fa fa-caret-down"></i></Button>
+        <Button>Building Materials <i className="fa fa-caret-down"></i></Button>
         <Button>Price <i className="fa fa-caret-down"></i></Button>
         <Button>Review <i className="fa fa-caret-down"></i></Button>
-        <Button>Color <i className="fa fa-caret-down"></i></Button>
+        {/* <Button>Color <i className="fa fa-caret-down"></i></Button> */}
         <Button>Material <i className="fa fa-caret-down"></i></Button>
-        <Button>Offer <i className="fa fa-caret-down"></i></Button>
+        {/* <Button>Offer <i className="fa fa-caret-down"></i></Button> */}
         <Button>All Filters <i className="fa fa-caret-down"></i></Button>
         </div>
         <div className="sort">

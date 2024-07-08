@@ -1,20 +1,10 @@
 import "./Post.css";
 import Button from "../../Utils/Button/Button";
 import { ProductContext } from "../../Utils/ProductsContext";
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 
-
-const placeholder = "https://www.trschools.com/templates/imgs/default_placeholder.png";
-
-// const reducer = (state, action) => {
-//   if (action.type === "addProduct") {
-//     const updatedState = [...state, { ...action.payload }];
-//     localStorage.setItem("products", JSON.stringify(updatedState));
-//     return updatedState;
-//   } else {
-//     throw new Error("Unknown action type");
-//   }
-// };
+const placeholder =
+  "https://www.trschools.com/templates/imgs/default_placeholder.png";
 
 
 const Post = () => {
@@ -27,96 +17,98 @@ const Post = () => {
     const save = URL.createObjectURL(file);
     setInputValues((prev) => ({
       ...prev,
-      image: save
+      image: save,
     }));
     setDisplayImage(save);
   };
 
-  // const addProduct = () => {
-  //   try {
-  //     const newProduct = inputValues;
-  //     dispatch({ type: "addProduct", payload: newProduct });
-  //     console.log("Product added:", newProduct);
-  //     setInputValues({});
-  //     setDisplayImage(placeholder);
-  //   } catch (error) { 
-  //     console.error('Failed to add product:', error);
-  //   }
-  // };
-  const addProduct = () => {
-    dispatch({type: "addProduct", payload:inputValues});
+  const addProduct = (e) => {
+    e.preventDefault();
+    dispatch({ type: "addProduct", payload: inputValues });
     setInputValues({});
     setDisplayImage(placeholder);
-  }
+  };
 
   return (
     <section className="post-product-section">
       <h1>Post your product</h1>
       <div className="post-section">
-        <form>
+        <form onSubmit={addProduct}>
           <img src={displayImage} alt="place" className="post-img" />
           <input
             type="file"
             accept="image/jpeg, image/gif, image/png"
             id="image"
+            required={true}
             onChange={(e) => handleUploadImage(e)}
           />
-          <label htmlFor="image">Add Image</label>
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Product Name"
-            value={inputValues.name || ""}
-            onChange={(e) =>
-              setInputValues((prev) => ({
-                ...prev,
-                name: e.target.value
-              }))
-            }
-          />
-
-          <input
-            type="text"
-            name="description"
-            placeholder="Product Description"
-            value={inputValues.description || ""}
-            onChange={(e) =>
-              setInputValues((prev) => ({
-                ...prev,
-                description: e.target.value
-              }))
-            }
-          />
-
-          <input
-            type="text"
-            name="category"
-            placeholder="Product Category"
-            value={inputValues.category || ""}
-            onChange={(e) =>
-              setInputValues((prev) => ({
-                ...prev,
-                category: e.target.value
-              }))
-            }
-          />
-
-          <input
-            type="text"
-            name="price"
-            placeholder="Product Price"
-            value={inputValues.price || ""}
-            onChange={(e) =>
-              setInputValues((prev) => ({
-                ...prev,
-                price: e.target.value
-              }))
-            }
-          />
+          <label className="add-image" htmlFor="image">Add Image</label>
+          <label htmlFor="id">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Product Name"
+              value={inputValues.name || ""}
+              onChange={(e) =>
+                setInputValues((prev) => ({
+                  ...prev,
+                  name: e.target.value,
+                }))
+              }
+            />
+          </label>
+          <label htmlFor="description">
+            <input
+              type="text"
+              name="description"
+              id="description"
+              required
+              placeholder="Product Description"
+              value={inputValues.description || ""}
+              onChange={(e) =>
+                setInputValues((prev) => ({
+                  ...prev,
+                  description: e.target.value,
+                }))
+              }
+            />
+          </label>
+          <label id="category">
+            <input
+              type="text"
+              name="category"
+              id="category"
+              required
+              placeholder="Product Category"
+              value={inputValues.category || ""}
+              onChange={(e) =>
+                setInputValues((prev) => ({
+                  ...prev,
+                  category: e.target.value,
+                }))
+              }
+            />
+          </label>
+          <label htmlFor="price">
+            <input
+              type="text"
+              name="price"
+              required
+              placeholder="Product Price"
+              value={inputValues.price || ""}
+              onChange={(e) =>
+                setInputValues((prev) => ({
+                  ...prev,
+                  price: e.target.value,
+                }))
+              }
+            />
+          </label>
+          <Button type="submit">Post</Button>
         </form>
       </div>
-      <Button onClick={addProduct}>Post</Button>
     </section>
   );
 };
