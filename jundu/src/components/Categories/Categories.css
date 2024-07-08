@@ -19,20 +19,39 @@
     gap: 1rem;
     padding-inline: 1.5rem;
     margin-block-end: 2rem;
-    /* border: 3px solid red; */
-    /* height: 300px; */
 
     & .sort {
         position: sticky;
         top: 60px;
+        align-items: center;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
     }
     
     & .sort Button{
         background-color: transparent;
         border: 3px solid #E8E8E8;
         animation: floatin 2.5s ease-out;
-      
     }
+
+    & .dropdown-content{
+        padding-top: 0.5rem;
+        list-style: none;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem; 
+    }
+
+    & span:hover {
+        cursor: pointer;
+        border-radius: 15px;
+        padding: 5px;
+        background-color: aliceblue ;
+    }
+
     & i {
         padding-inline-start: 0.5rem;
     }
