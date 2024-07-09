@@ -6,13 +6,17 @@ const initialState = [];
 
 const reducer = (state, action) => {
     if(action.type === "addProduct"){
+      console.log(action.payload)
         return [...state, {...action.payload,id: state.length}];
-    } else {
+    } else if(action.type === "ceramicsFilter"){
+      const {category, products} = action.payload
+      const filteredCeramics = products.filter((product) => product.category === category)
+      return filteredCeramics;
+    }else{
       if(action.type === "addToCart"){
         return [...state, {...action.payload,id: state.length}]
       } else{
         throw new Error()
-
       }
     }
    

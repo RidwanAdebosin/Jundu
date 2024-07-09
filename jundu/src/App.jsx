@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/post" element={<Post />} />
         <Route path="/cart" element={<CartItems />} />
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </BrowserRouter>
 
    

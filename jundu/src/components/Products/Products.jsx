@@ -5,12 +5,10 @@ import Heart from "../../Utils/Heart";
 import StarRating from "../../Utils/StarRating";
 import Pagination from "../../Utils/Pagination/Pagination";
 import Spinner from "../../Utils/Spinner/Spinner";
-// import { ProductsList } from "../../Utils/ProductsList";
 import { ProductContext } from "../../Utils/ProductsContext";
 
 
 const Product = () => {
-  // dispatch({type: "addProduct", payload: inputValues})
   const {products,dispatch} = useContext(ProductContext);
   const [productsPerPage] = useState(10);
   const [page, setPage] = useState(1);
@@ -23,30 +21,58 @@ const Product = () => {
     }, 2000);
   },[]);
 
-  const handleAddToCart = (products) => {
-    // e.preventDefault();
-    dispatch({type: "addToCart", payload: products});
-    console.log(products)
+  const handleAddToCart = (product) => {
+    dispatch({type: "addToCart", payload: product});
+    console.log(product)
   };
  
   const truncate = (str, length) => {
     return str.length > length ? str.substring(0, length) + "..." : str;
   };
 
-  const indexOfLastProduct = page * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
-  );
+  // const indexOfLastProduct = page * productsPerPage;
+  // const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  // const currentProducts = products.slice(
+  //   indexOfFirstProduct,
+  //   indexOfLastProduct
+  // );
 
+  // const filterCeramicProducts = ()=> {
+  //   return products.filter((product) => product.category === "ceramics")
+  // }
+
+  // const displayCeramicProducts= () => {
+  //   const ceramicProductsList = filterCeramicProducts();
+  //   return (
+  //     <div className="ceramic-products">
+  //       <h3>Ceramic Products</h3>
+  //       <ul>
+  //         {ceramicProductsList.map((product) => (
+  //           <div className="single-card" key={product.id}>
+  //           <div className="img-wrapper">
+  //             <img src={product.image} alt={product.title} />
+  //             <Heart className="heart"/>
+  //           </div>
+  //           <div className="product-content">
+  //             <p>{product.name}</p>
+  //             <p>{truncate(product.description, 20)}</p>
+  //             <StarRating />
+  //             <p>₦{product.price}</p>
+  //           </div>
+  //           <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
+  //         </div>
+  //         ))}
+  //       </ul>
+  //     </div>
+  //   )
+  // }
   return (
     <>
       <main className="card-container">
         {loading ? (
           <Spinner /> 
         ) : (
-          currentProducts.map((item, index) => (
+          products.map((item, index) => (
             <div className="single-card" key={index}>
               <div className="img-wrapper">
                 <img src={item.image} alt={item.title} />
@@ -62,6 +88,9 @@ const Product = () => {
             </div>
           ))
         )}
+          {/* {
+        displayCeramicProducts()
+      } */}
       </main>
       {
         products.length === 0 ? " " : (
