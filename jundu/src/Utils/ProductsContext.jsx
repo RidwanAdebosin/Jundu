@@ -3,55 +3,50 @@ import { createContext, useReducer } from "react";
 export const ProductContext = createContext(null);
 
 const initialState = [];
+const Cart = [];
 
-const reducer = (state, action) => {
-    if(action.type === "addProduct"){
-      console.log(action.payload)
-        return [...state, {...action.payload,id: state.length}];
-    } else if(action.type === "ceramicsFilter"){
-      const {category, products} = action.payload
-      const filteredCeramics = products.filter((product) => product.category === category)
-      return filteredCeramics;
-    }else{
-      if(action.type === "addToCart"){
-        return [...state, {...action.payload,id: state.length}]
-      } else{
-        throw new Error()
-      }
+const cartRed = (state, action) => {
+  if (action.type === "addToCart") {
+    const check =state.findIndex((e) =>e.id === action.payload.id)
+    if(check === -1){
+      return [...state, { ...action.payload, QTY: 1 }];
     }
-   
-    // if(action.type)
-//   switch (action.type) {
-//     case "setProducts":
-//       return action.payload || [];
-//     case "addProduct": {
-//         const updatedState = [...state, action.payload];
-//         localStorage.setItem("products", JSON.stringify(updatedState));
-//         return updatedState;
-//     }
-    // case "removeProduct": {
-    //     const newState = state.filter((product) => product.id !== action.payload);
-    //     localStorage.setItem("products", JSON.stringify(newState));
-    //     return newState;
-    // }
-    // case "addToCart" : {
-    //     const newState = state.map(product => 
-    //         product.id === action.payload.id ? {...product, inCart: true}
-    //         : product
-    //     )
-    //     localStorage.setItem("products", JSON.stringify(newState));
-    //   return newState;
-    // }
-    // default:
-    //   throw new Error(`Unknown action: ${action.type}`);
-  
+  } else {
+    throw new Error();
+  }
 };
 
- const ContextProvider = ({ children }) => {
+const reducer = (state, action) => {
+  const { category, products } = action.payload;
+  if (action.type === "addProduct") {
+    return [...state, { ...action.payload, id: state.length }];
+  } else if (action.type === "ceramicsFilter") {
+    const filteredCeramics = products.filter(
+      (product) => product.category === category
+    );
+    console.log(filteredCeramics)
+    return filteredCeramics;
+  } else if (action.type === "woodenFilter") {
+    const filteredWooden = products.filter(
+      (product) => product.category === category
+    );
+    console.log(filteredWooden);
+    return filteredWooden;
+  } else if (action.type === "metalsFilter") {
+    const filteredMetals = products.filter(
+      (product) => product.category === category
+    );
+    console.log(filteredMetals)
+    return filteredMetals;
+  }
+};
+
+const ContextProvider = ({ children }) => {
   const [products, dispatch] = useReducer(reducer, initialState);
+  const [cart, cartDispatch] = useReducer(cartRed, Cart);
 
   return (
-    <ProductContext.Provider value={{ products, dispatch }}>
+    <ProductContext.Provider value={{ products, dispatch, cart, cartDispatch }}>
       {children}
     </ProductContext.Provider>
   );

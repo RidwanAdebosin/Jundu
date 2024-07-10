@@ -1,9 +1,10 @@
-import ParentComponent from "../Routes/ParentComponent";
+
+import Product from '../components/Products/Products';
 
 const Home = () => {
   return (
     <div>
-      <ParentComponent/>
+      <Product/>
     </div>
   );
 };

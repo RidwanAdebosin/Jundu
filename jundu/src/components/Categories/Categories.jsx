@@ -6,7 +6,6 @@ import "./Categories.css";
 const Categories = () => {
   const [showContent, setShowContent] = useState(false);
   const {products, dispatch} = useContext(ProductContext);
-
   const navRef = useRef();
 
   useEffect(() => {
@@ -40,7 +39,6 @@ const Categories = () => {
 
   return (
     <section className="categories" ref={navRef}>
-  
       <div className="dropdown" aria-label="Toggle menu">
         <Button onClick={handleDropdownMenu}>
           Sort by{" "}
@@ -52,8 +50,8 @@ const Categories = () => {
         </Button>
         {showContent && (
           <div className="dropdown-content">
-            <span onClick={handleNavLinkClick}> Wooden</span>
-            <span onClick={handleNavLinkClick}>Metal</span>
+            <span onClick={() => handleShowProductbyCategory("wooden", "woodenFilter")}> Wooden</span>
+            <span onClick={() => handleShowProductbyCategory("metals","metalsFilter")}>Metal</span>
             <span onClick={() => handleShowProductbyCategory("ceramics", "ceramicsFilter")}>Ceramics</span>
           </div>
         )}

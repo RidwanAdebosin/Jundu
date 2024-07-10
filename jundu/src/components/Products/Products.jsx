@@ -37,35 +37,7 @@ const Product = () => {
   //   indexOfLastProduct
   // );
 
-  // const filterCeramicProducts = ()=> {
-  //   return products.filter((product) => product.category === "ceramics")
-  // }
 
-  // const displayCeramicProducts= () => {
-  //   const ceramicProductsList = filterCeramicProducts();
-  //   return (
-  //     <div className="ceramic-products">
-  //       <h3>Ceramic Products</h3>
-  //       <ul>
-  //         {ceramicProductsList.map((product) => (
-  //           <div className="single-card" key={product.id}>
-  //           <div className="img-wrapper">
-  //             <img src={product.image} alt={product.title} />
-  //             <Heart className="heart"/>
-  //           </div>
-  //           <div className="product-content">
-  //             <p>{product.name}</p>
-  //             <p>{truncate(product.description, 20)}</p>
-  //             <StarRating />
-  //             <p>₦{product.price}</p>
-  //           </div>
-  //           <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
-  //         </div>
-  //         ))}
-  //       </ul>
-  //     </div>
-  //   )
-  // }
   return (
     <>
       <main className="card-container">
@@ -88,9 +60,6 @@ const Product = () => {
             </div>
           ))
         )}
-          {/* {
-        displayCeramicProducts()
-      } */}
       </main>
       {
         products.length === 0 ? " " : (
