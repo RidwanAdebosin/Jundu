@@ -50,6 +50,7 @@ const Categories = () => {
         </Button>
         {showContent && (
           <div className="dropdown-content">
+            <span onClick={() => (products)}>General</span>
             <span onClick={() => handleShowProductbyCategory("wooden", "woodenFilter")}> Wooden</span>
             <span onClick={() => handleShowProductbyCategory("metals","metalsFilter")}>Metal</span>
             <span onClick={() => handleShowProductbyCategory("ceramics", "ceramicsFilter")}>Ceramics</span>

@@ -7,12 +7,13 @@ const Cart = [];
 
 const cartRed = (state, action) => {
   if (action.type === "addToCart") {
-    const check =state.findIndex((e) =>e.id === action.payload.id)
+    const check = state.findIndex((e) =>e.id === action.payload.id)
     if(check === -1){
-      return [...state, { ...action.payload, QTY: 1 }];
+      return [...state, {...action.payload, QTY: 1 }];
     }
   } else {
-    throw new Error();
+    alert("Item already in cart");
+    return state;
   }
 };
 
@@ -24,19 +25,19 @@ const reducer = (state, action) => {
     const filteredCeramics = products.filter(
       (product) => product.category === category
     );
-    console.log(filteredCeramics)
+    // console.log(filteredCeramics)
     return filteredCeramics;
   } else if (action.type === "woodenFilter") {
     const filteredWooden = products.filter(
       (product) => product.category === category
     );
-    console.log(filteredWooden);
+    // console.log(filteredWooden);
     return filteredWooden;
   } else if (action.type === "metalsFilter") {
     const filteredMetals = products.filter(
       (product) => product.category === category
     );
-    console.log(filteredMetals)
+    // console.log(filteredMetals)
     return filteredMetals;
   }
 };

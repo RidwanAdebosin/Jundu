@@ -8,8 +8,8 @@ import Spinner from "../../Utils/Spinner/Spinner";
 import { ProductContext } from "../../Utils/ProductsContext";
 
 
-const Product = () => {
-  const {products,dispatch} = useContext(ProductContext);
+const Product = ({item}) => {
+  const {products, cartDispatch} = useContext(ProductContext);
   const [productsPerPage] = useState(10);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -21,9 +21,9 @@ const Product = () => {
     }, 2000);
   },[]);
 
-  const handleAddToCart = (product) => {
-    dispatch({type: "addToCart", payload: product});
-    console.log(product)
+  const handleAddToCart = () => {
+    cartDispatch({type: "addToCart", payload: item});
+    
   };
  
   const truncate = (str, length) => {
@@ -56,7 +56,7 @@ const Product = () => {
                 <StarRating />
                 <p>₦{item.price}</p>
               </div>
-              <Button onClick={() => handleAddToCart(item)}>Add to Cart</Button>
+              <Button onClick={handleAddToCart}>Add to Cart</Button>
             </div>
           ))
         )}
@@ -69,7 +69,6 @@ const Product = () => {
             totalProducts={products.length}
             productsPerPage={productsPerPage}
           />
-
         )
       }
     </>
