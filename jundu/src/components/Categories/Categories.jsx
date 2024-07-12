@@ -23,9 +23,11 @@ const Categories = () => {
   const handleNavLinkClick = () => {
     setShowContent(false);
   };
+  
   // const handleMaterialsMenu = () => {
   //   setIsOpen(!isOpen);
   // };
+
   const handleDropdownMenu = () => {
     setShowContent(!showContent);
   };
@@ -50,10 +52,10 @@ const Categories = () => {
         </Button>
         {showContent && (
           <div className="dropdown-content">
-            <span onClick={() => (products)}>General</span>
-            <span onClick={() => handleShowProductbyCategory("wooden", "woodenFilter")}> Wooden</span>
-            <span onClick={() => handleShowProductbyCategory("metals","metalsFilter")}>Metal</span>
-            <span onClick={() => handleShowProductbyCategory("ceramics", "ceramicsFilter")}>Ceramics</span>
+            <span onClick={products}>General</span>
+            <span onClick={() => handleShowProductbyCategory("Wooden", "woodenFilter")}> Wooden</span>
+            <span onClick={() => handleShowProductbyCategory("Metals","metalsFilter")}>Metal</span>
+            <span onClick={() => handleShowProductbyCategory("Ceramics", "ceramicsFilter")}>Ceramics</span>
           </div>
         )}
       </div>

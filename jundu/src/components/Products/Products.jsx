@@ -13,6 +13,7 @@ const Product = ({item}) => {
   const [productsPerPage] = useState(10);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
+ 
 
   // setting a timeout for the spinner
   useEffect(()=> {
@@ -22,7 +23,7 @@ const Product = ({item}) => {
   },[]);
 
   const handleAddToCart = () => {
-    cartDispatch({type: "addToCart", payload: item});
+    cartDispatch({type: "addToCart", payload: products});
     
   };
  
