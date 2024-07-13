@@ -6,7 +6,7 @@ import { ProductContext } from "../../Utils/ProductsContext";
 const CartItems = ({ item }) => {
   const { cartDispatch } = useContext(ProductContext);
 
-
+console.log(item)
 
   // const handleDeleteCartItem = () => {
   //   dispatch({ type: "removeProduct", payload: products.id });
@@ -22,13 +22,13 @@ const CartItems = ({ item }) => {
         <p>{item.description}</p>
         <div className="CartItemsInfo">
           <p>₦{item.price}</p>
-          <Button className="CartItemDelete">
+          <Button className="CartItemDelete" onClick={(()=>cartDispatch({type: "delete", payload: item.id}))}>
             Delete
           </Button>
           <div className="CartActions">
-            <Button>-</Button>
+            <Button onClick={(() => cartDispatch({type: "decrease", payload:item}))}>-</Button>
             <p>{item.QTY}</p>
-            <Button>+</Button>
+            <Button onClick={(()=> cartDispatch({type:"increase", payload: item}))}>+</Button>
           </div>
         </div>
       </div>

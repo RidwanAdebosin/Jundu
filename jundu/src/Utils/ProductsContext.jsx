@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import db from "./ProductsList";
 export const ProductContext = createContext(null);
 
@@ -77,9 +77,24 @@ const reducer = (state, action) => {
 const ContextProvider = ({ children }) => {
   const [products, dispatch] = useReducer(reducer, initialState);
   const [cart, cartDispatch] = useReducer(cartRed, Cart);
+  const [total, setTotal] = useState(0);
+  const [quant, setQuant] = useState(0);
+
+  useEffect(()=> {
+    const totalVal = cart.reduce((a, e) => {
+      const val = (Number(e.price) * e.QTY) + a
+      return val;
+    }, 0)
+    const totalQuant = cart.reduce((a, e) => {
+      const val = e.QTY + a
+      return val;
+  },0)
+  setTotal(totalVal);
+  setQuant(totalQuant)
+}, [cart]);
 
   return (
-    <ProductContext.Provider value={{ products, dispatch, cart, cartDispatch }}>
+    <ProductContext.Provider value={{ products, dispatch, cart, cartDispatch, total, quant }}>
       {children}
     </ProductContext.Provider>
   );

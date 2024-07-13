@@ -1,15 +1,13 @@
 import { useState, useEffect, useContext } from "react";
 import "./Products.css";
-import Button from "../../Utils/Button/Button";
-import Heart from "../../Utils/Heart";
-import StarRating from "../../Utils/StarRating";
+import Card from "../Card/Card";
 import Pagination from "../../Utils/Pagination/Pagination";
 import Spinner from "../../Utils/Spinner/Spinner";
 import { ProductContext } from "../../Utils/ProductsContext";
 
 
-const Product = ({item}) => {
-  const {products, cartDispatch} = useContext(ProductContext);
+const Product = () => {
+  const {products} = useContext(ProductContext);
   const [productsPerPage] = useState(10);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -22,14 +20,7 @@ const Product = ({item}) => {
     }, 2000);
   },[]);
 
-  const handleAddToCart = () => {
-    cartDispatch({type: "addToCart", payload: products});
-    
-  };
- 
-  const truncate = (str, length) => {
-    return str.length > length ? str.substring(0, length) + "..." : str;
-  };
+
 
   // const indexOfLastProduct = page * productsPerPage;
   // const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -45,20 +36,8 @@ const Product = ({item}) => {
         {loading ? (
           <Spinner /> 
         ) : (
-          products.map((item, index) => (
-            <div className="single-card" key={index}>
-              <div className="img-wrapper">
-                <img src={item.image} alt={item.title} />
-                <Heart className="heart"/>
-              </div>
-              <div className="product-content">
-                <p>{item.name}</p>
-                <p>{truncate(item.description, 20)}</p>
-                <StarRating />
-                <p>₦{item.price}</p>
-              </div>
-              <Button onClick={handleAddToCart}>Add to Cart</Button>
-            </div>
+          products.map((e) => (
+            <Card item={e} key={e.id}/>
           ))
         )}
       </main>

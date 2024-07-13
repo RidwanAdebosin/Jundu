@@ -20,23 +20,22 @@ const Categories = () => {
     };
   }, [navRef]);
 
-  const handleNavLinkClick = () => {
-    setShowContent(false);
-  };
-  
-  // const handleMaterialsMenu = () => {
-  //   setIsOpen(!isOpen);
-  // };
 
+  // const handleMaterialsMenu = () => {
+    //   setIsOpen(!isOpen);
+  // };
+  
   const handleDropdownMenu = () => {
     setShowContent(!showContent);
   };
-
+  
   const handleShowProductbyCategory = (category, dispatchName) => {
     dispatch({type: dispatchName, payload: {
       category, 
       products
     }})
+    setShowContent(false);
+    
   };
 
   return (
