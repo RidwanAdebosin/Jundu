@@ -1,16 +1,12 @@
 import "./CartItems.css";
-import Button from "../../Utils/Button/Button";
 import { useContext } from "react";
 import { ProductContext } from "../../Utils/ProductsContext";
+
 
 const CartItems = ({ item }) => {
   const { cartDispatch } = useContext(ProductContext);
 
-console.log(item)
 
-  // const handleDeleteCartItem = () => {
-  //   dispatch({ type: "removeProduct", payload: products.id });
-  // };
 
   return (
     <div className="CartItemContainer">
@@ -18,20 +14,22 @@ console.log(item)
         <img src={item.image} alt={item.name} />
       </div>
       <div className="CartDetails">
-        <h3>{item.name}</h3>
-        <p>{item.description}</p>
+        <h3 className="CartDetailsName">{item.name}</h3>
+        <span>{item.size}</span>
         <div className="CartItemsInfo">
-          <p>₦{item.price}</p>
-          <Button className="CartItemDelete" onClick={(()=>cartDispatch({type: "delete", payload: item.id}))}>
-            Delete
-          </Button>
           <div className="CartActions">
-            <Button onClick={(() => cartDispatch({type: "decrease", payload:item}))}>-</Button>
-            <p>{item.QTY}</p>
-            <Button onClick={(()=> cartDispatch({type:"increase", payload: item}))}>+</Button>
+            <span onClick={(() => cartDispatch({type: "decrease", payload:item}))}>-</span>
+            <p> Qty : {item.QTY}</p>
+            <span onClick={(()=> cartDispatch({type:"increase", payload: item}))}>+</span>
           </div>
+          <p>₦{item.price}</p>
         </div>
       </div>
+        <div className="cancelButton">
+        <span className="CartItemDelete" onClick={(()=>cartDispatch({type: "delete", payload: item.id}))}>
+        &times; 
+          </span>
+        </div>
     </div>
   );
 };

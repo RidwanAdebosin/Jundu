@@ -5,6 +5,7 @@ const db = [
       name: 'Wooden Table',
       description: 'A beautifully crafted wooden table.',
       price: 150,
+      size: "100mm",
       category: 'Wooden'
     },
     {
@@ -13,7 +14,8 @@ const db = [
       name: 'Ceramic Vase',
       description: 'A handmade ceramic vase.',
       price: 45,
-      category: 'Ceramics'
+      category: 'Ceramics',
+      size: "100mm",
     },
     {
       id: 3,
@@ -21,6 +23,7 @@ const db = [
       name: 'Metal Sculpture',
       description: 'An intricate metal sculpture.',
       price: 120,
+      size: "100mm",
       category: 'Metals'
     },
     {
@@ -29,6 +32,7 @@ const db = [
       name: 'Wooden Chair',
       description: 'A sturdy wooden chair.',
       price: 85,
+      size: "100mm",
       category: 'Wooden'
     },
     {
@@ -37,6 +41,7 @@ const db = [
       name: 'Ceramic Plate Set',
       description: 'A set of elegant ceramic plates.',
       price: 60,
+      size: "100mm",
       category: 'Ceramics'
     },
     {
@@ -44,6 +49,7 @@ const db = [
       image: 'https://images.unsplash.com/photo-1572011990082-9b87b18c1504',
       name: 'Metal Lamp',
       description: 'A stylish metal lamp.',
+      size: "100mm",
       price: 75,
       category: 'Metals'
     }

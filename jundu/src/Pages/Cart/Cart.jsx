@@ -8,20 +8,20 @@ const Cart = () => {
 // console.log(products)
 
   return (
-    <div className="Cart-Container">
-      <div className="Cart-Info">
-        <div>Total: ₦{total}</div>
-        <div className="CartClear" onClick={(() => cartDispatch({type: "clear"}))} style={{cursor: "pointer"}}>Clear Cart</div>
-        <div className="CartClear" style={{cursor: "pointer"}}>Pay</div>
-        <div>Total Items: {cart.length}</div>
-        <div>Total Quantity: {quant}</div>
-      </div>
-      <div className="CartHolder">
-        {cart.map((e, i) => (
+    <main className="Cart-Container">
+      <header className="Cart-Info">
+        <p>Total: ₦{total}</p>
+        <p className="CartClear" onClick={(() => cartDispatch({type: "clear"}))} style={{cursor: "pointer"}}>Clear Cart</p>
+        <p className="CartClear" style={{cursor: "pointer"}}>Pay</p>
+        <p>Total Items: {cart.length}</p>
+        <p>Total Quantity: {quant}</p>
+      </header>
+      <section className="CartHolder">
+        {cart.map((e) => (
           <CartItems key={e.id} item={e} />
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

@@ -1,20 +1,29 @@
+
+
 .Cart-Container {
-    padding-top: 100px;
     display: grid;
     place-items: center;
+    padding-inline: 2rem;
+    width: 100%;
+    /* height: auto; */
+    height: 100vh;
 }
 
 .Cart-Info {
+    margin-top: 90px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
     height: 50px;
-    position: sticky;
+    /* position: fixed; */
 }
 
 .CartHolder {
     display: grid;
     gap: 1rem;
+    margin-top: 2rem;
+    /* padding-top: 110px; */
 }
 
 @media (width >= 800px) {

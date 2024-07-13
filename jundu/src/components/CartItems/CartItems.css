@@ -1,38 +1,53 @@
 .CartItemContainer {
-    width: 90%;
-    height: 200px;
+    width: 100%;
+    height: 150px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 5px;
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 120px 1fr 20px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.5rem;
+    /* border: 3px solid red; */
+    background-color: antiquewhite;
+    position: relative;
 }
 
 .CartItemImage {
-    width: 200px;
-    height: 300px;
+    max-width: 120px;
+    height: 120px;
+    border-radius: 10px;
 }
 
 .CartItemImage img {
     width: 100%;
-    height: 50%;
+    height: 100%;
+    border-radius: inherit;
 }
 
 .CartDetails {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    
+    display: grid;
+    height: 100%;
+}
+
+.cancelButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 0.5rem;
+}
+.CartItemDelete {
+    font-size: 30px;
+    color: gray;
+    cursor: pointer;
+    margin-block-start: -100px;
 }
 
 .CartItemsInfo {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-
-    & button{
-        width: fit-content;
-    }
 }
 
 .CartActions {
