@@ -1,18 +1,15 @@
 .footer{
-        /* padding: 2rem; */
+       margin-top: auto;
         background-color: brown;
-        height: auto;
+        /* height: auto; */
         color: tan;
         max-width: 100%;
-        position: relative;
-        bottom: 0;
-        /* height: 170px; */
+        
 
     & .footer-extras {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        /* margin-block-end: 2.5rem; */
         padding: 2rem;
     
     & ul {

@@ -1,31 +1,27 @@
-
-
 .Cart-Container {
-    display: grid;
-    place-items: center;
+    padding-block-start: 5rem;
+    padding-block-end: 5rem;
     padding-inline: 2rem;
-    /* width: 100%; */
-    /* height: auto; */
-    height: 100vh;
-    /* background-color: white; */
-    /* margin-block-end: 40px; */
+    height: 100svh;
 }
 
 .Cart-Info {
-    margin-top: 90px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
     height: 50px;
-    /* position: fixed; */
+    position: sticky;
+    margin-block-end: 50px;
 }
 
 .CartHolder {
-    display: grid;
-    /* gap: 1rem; */
-    /* margin-top: 2rem; */
-    /* padding-top: 110px; */
+    /* display: grid; */
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (width >= 800px) {

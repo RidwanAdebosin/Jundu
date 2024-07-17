@@ -42,6 +42,8 @@ const Header = () => {
                 <NavLink to="/post" onClick={handleNavLinkClick}>Post</NavLink>
                 <NavLink to="/contact" onClick={handleNavLinkClick}>Contact</NavLink>
                 <NavLink to="/register" onClick={handleNavLinkClick}>Register</NavLink>
+                
+                <NavLink to="/login" onClick={handleNavLinkClick}>Log In</NavLink>
                 <div className="cart" onClick={handleNavLinkClick}>
                     <NavLink to="/cart">
                     <div className="cartNumber">{cart.length}</div>

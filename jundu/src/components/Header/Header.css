@@ -4,15 +4,15 @@
   justify-content: space-between;
   align-items: center;
   padding-inline: 1rem;
-  height: 5rem;
+  block-size: 10vh;
   background-color: #deb887;
   border-bottom: 20px double brown;
+  inline-size: 100%;
   position: fixed;
-  width: 100%;
   z-index: 10;
   
-  & .logo {
-    font-size: 3rem;
+  & .logo-h1 {
+    font-size: 1em;
   }
   
 
