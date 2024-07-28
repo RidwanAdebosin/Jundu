@@ -1,73 +1,74 @@
-.Sign_Card{
-    padding-block-start: 10rem;
+.Sign_Card {
+  padding-block-start: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 10px;
+
+  & form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    border-radius: 10px;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    height: 60%;
 
-    & form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        gap: 10px;
-        height: 60%;
+    & div {
+      width: 85%;
+      border: 1px solid black;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      background: white;
+      padding-inline-end: 10px;
 
-        & div{
-            width: 85%;
-            border: 1px solid black;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            background: white;
-            padding-inline-end: 10px;
-
-            & input{
-                width: 96%;
-                border: none;
-                outline: none;
-            }
-            & svg{
-                font-size: 20px;
-            }
-        }
-
-        & input{
-            width: 85%;
-            height: 50px;
-            outline: none;
-            border: 1px solid black;
-            border-radius: 5px;
-            font-size: 17px;
-            padding: 10px;
-        }
-        & button{
-            width: 85%;
-            height: 50px;
-            border-radius: 25px;
-            color: white;
-            background-color: black;
-            cursor: pointer;
-            font-size: 20px;
-        }
-        & button:hover{
-            transition: all 350ms;
-            background: brown;
-            border: none;
-        }
+      & input {
+        width: 96%;
+        border: none;
+        outline: none;
+      }
+      & svg {
+        font-size: 20px;
+      }
     }
 
-    & p{
-        font-size: 17px;
-        font-weight: 600;
-        & span{
-            & a{
-                color:brown;
-                text-decoration: none;
-            }
-        }
+    & input {
+      width: 85%;
+      height: 50px;
+      outline: none;
+      border: 1px solid black;
+      border-radius: 5px;
+      font-size: 17px;
+      padding: 10px;
     }
+    & button {
+      width: 85%;
+      height: 50px;
+      border-radius: 25px;
+      color: white;
+      background-color: black;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    & button:hover {
+      transition: all 350ms;
+      background: brown;
+      border: none;
+    }
+  }
+
+  & p {
+    font-size: 17px;
+    font-weight: 600;
+    margin-block-end: 20px;
+    & span {
+      & a {
+        color: brown;
+        text-decoration: none;
+      }
+    }
+  }
 }

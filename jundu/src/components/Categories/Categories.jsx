@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef, useContext } from "react";
-import { ProductContext } from "../../Utils/ProductsContext";
+import { useState, useEffect, useRef } from "react";
+// import { ProductContext } from "../../Utils/ProductsContext";
 import Button from "../../Utils/Button/Button";
 import "./Categories.css";
 
 const Categories = () => {
   const [showContent, setShowContent] = useState(false);
-  const {products, dispatch} = useContext(ProductContext);
+  // const { products, dispatch } = useContext(ProductContext);
   const navRef = useRef();
 
   useEffect(() => {
@@ -20,22 +20,23 @@ const Categories = () => {
     };
   }, [navRef]);
 
-
   // const handleMaterialsMenu = () => {
-    //   setIsOpen(!isOpen);
+  //   setIsOpen(!isOpen);
   // };
-  
+
   const handleDropdownMenu = () => {
     setShowContent(!showContent);
   };
-  
+
   const handleShowProductbyCategory = (category, dispatchName) => {
-    dispatch({type: dispatchName, payload: {
-      category, 
-      products
-    }})
+    dispatch({
+      type: dispatchName,
+      payload: {
+        category,
+        products,
+      },
+    });
     setShowContent(false);
-    
   };
 
   return (
@@ -52,9 +53,28 @@ const Categories = () => {
         {showContent && (
           <div className="dropdown-content">
             <span onClick={products}>General</span>
-            <span onClick={() => handleShowProductbyCategory("Wooden", "woodenFilter")}> Wooden</span>
-            <span onClick={() => handleShowProductbyCategory("Metals","metalsFilter")}>Metal</span>
-            <span onClick={() => handleShowProductbyCategory("Ceramics", "ceramicsFilter")}>Ceramics</span>
+            <span
+              onClick={() =>
+                handleShowProductbyCategory("Wooden", "woodenFilter")
+              }
+            >
+              {" "}
+              Wooden
+            </span>
+            <span
+              onClick={() =>
+                handleShowProductbyCategory("Metals", "metalsFilter")
+              }
+            >
+              Metal
+            </span>
+            <span
+              onClick={() =>
+                handleShowProductbyCategory("Ceramics", "ceramicsFilter")
+              }
+            >
+              Ceramics
+            </span>
           </div>
         )}
       </div>
@@ -64,8 +84,8 @@ const Categories = () => {
 
 export default Categories;
 
-
-{/* <div className="product-categories">
+{
+  /* <div className="product-categories">
     
 <Button>
   Price{" "}
@@ -99,4 +119,5 @@ export default Categories;
     <i className="fa fa-caret-up"></i>
   )}
 </Button>
-</div> */}
+</div> */
+}
